@@ -18,7 +18,7 @@
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
-  gap: $gap;
+  gap: $gap rem;
 }
 
 // 3. Grid Layout
