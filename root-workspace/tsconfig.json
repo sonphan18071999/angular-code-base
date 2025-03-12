@@ -17,7 +17,8 @@
       "@shared/*": ["./src/app/shared/*"],
       "@components/*": ["./src/app/components/*"],
       "@ultis/*": ["./src/app/ultis/*"],
-      "@core/*": ["./src/app/cores/*"]
+      "@core/*": ["./src/app/cores/*"],
+      "@styles/*": ["./src/app/styles/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
