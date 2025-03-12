@@ -9,16 +9,32 @@
     "importHelpers": true,
     "target": "es2022",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@shared/*": ["./src/app/shared/*"],
-      "@components/*": ["./src/app/components/*"],
-      "@ultis/*": ["./src/app/ultis/*"],
-      "@core/*": ["./src/app/cores/*"],
-      "@styles/*": ["./src/app/styles/*"]
+      "@components/*": [
+        "./src/app/components/*"
+      ],
+      "@core/*": [
+        "./src/app/cores/*"
+      ],
+      "@shared/*": [
+        "./src/app/shared/*"
+      ],
+      "@styles/*": [
+        "./src/app/styles/*"
+      ],
+      "@ultis/*": [
+        "./src/app/ultis/*"
+      ],
+      "@pages/*": [
+        "./src/app/pages/*"
+      ]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -41,7 +57,10 @@
     }
   ],
   "compileOnSave": false,
-  "exclude": ["node_modules", "tmp"],
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
