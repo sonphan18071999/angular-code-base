@@ -1,4 +1,5 @@
 import nx from '@nx/eslint-plugin';
+import importPlugin from 'eslint-plugin-import';
 
 export default [
   ...nx.configs['flat/base'],
@@ -28,6 +29,7 @@ export default [
   ...nx.configs['flat/angular-template'],
   {
     files: ['**/*.ts'],
+    plugins: { import: importPlugin },
     ignores: ['**/server.ts'],
     rules: {
       '@angular-eslint/directive-selector': [
@@ -76,10 +78,20 @@ export default [
       'space-before-function-paren': ['error', 'always'],
       // Disallow unnecessary escape characters
       'no-useless-escape': 'error',
-      // Enforce single quotes except for template literals
-      'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
       // Require explicit return types in TypeScript functions
       '@typescript-eslint/explicit-function-return-type': 'warn',
+      'import/order': [
+        'error',
+        {
+          'groups': [
+            'builtin', // Node.js built-ins (fs, path, etc.)
+            'external', // npm packages (react, lodash, etc.)
+            'internal', // Aliased imports (e.g., @app/components)
+            ['parent', 'sibling', 'index'], // Relative imports
+          ],
+          'alphabetize': { order: 'asc', caseInsensitive: true }, // Sort imports alphabetically
+        },
+      ],
     },
   },
   {

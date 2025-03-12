@@ -1,27 +1,24 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
-import { RouterModule } from '@angular/router';
+import { TestBed } from "@angular/core/testing";
+import { RouterModule } from "@angular/router";
+import { AppComponent } from "./app.component";
 
-describe('AppComponent', () => {
+describe("AppComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, NxWelcomeComponent, RouterModule.forRoot([])],
+      imports: [AppComponent, RouterModule.forRoot([])],
     }).compileComponents();
   });
 
-  it('should render title', () => {
+  it("should render title", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome root-workspace'
-    );
+    expect(compiled.querySelector("h1")?.textContent).toContain("Welcome root-workspace");
   });
 
   it(`should have as title 'root-workspace'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('root-workspace');
+    expect(app.title).toEqual("root-workspace");
   });
 });
